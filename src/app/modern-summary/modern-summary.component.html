@@ -1,0 +1,69 @@
+<div class="container my-4">
+  <mat-card class="p-3 shadow-sm">
+    <h2 class="text-center mb-3">
+      🌟 Résumé du calcul effectué dans CombiCheckerComponent
+    </h2>
+    <p>
+      Le composant vérifie toutes les combinaisons possibles de 2 ou 3 nombres dans le tableau A et compte celles dont la somme est présente dans le tableau B.
+    </p>
+
+    <h4>🔍 Détails du calcul</h4>
+    <ol>
+      <li><strong>Données :</strong><br>
+        A : tableau de nombres saisis par l’utilisateur.<br>
+        B : tableau de nombres saisis par l’utilisateur.
+      </li>
+      <li><strong>Objectif :</strong><br>
+        Trouver toutes les paires et triplets de nombres de A dont la somme est exactement égale à un élément de B.
+      </li>
+    </ol>
+
+    <h4>🧮 Étapes mathématiques</h4>
+    <p><strong>📌 Étape 1 : Combinaisons de 2 éléments</strong></p>
+    <p>Pour chaque paire (A[i], A[j]) avec i &lt; j :</p>
+    <p>Calculer leur somme : sum2 = A[i] + A[j]<br>Vérifier si sum2 ∈ B.</p>
+    <p><em>Exemple :</em> A = [1,2,3], B = [4,5]</p>
+    <ul>
+      <li>1+2=3 (non dans B)</li>
+      <li>1+3=4 (dans B ✅)</li>
+      <li>2+3=5 (dans B ✅)</li>
+    </ul>
+
+    <p><strong>📌 Étape 2 : Combinaisons de 3 éléments</strong></p>
+    <p>Pour chaque triplet (A[i], A[j], A[k]) avec i &lt; j &lt; k :</p>
+    <p>Calculer leur somme : sum3 = A[i] + A[j] + A[k]<br>Vérifier si sum3 ∈ B.</p>
+    <p><em>Exemple :</em> A = [1,2,3,4], B = [6,7]</p>
+    <ul>
+      <li>1+2+3=6 (dans B ✅)</li>
+      <li>1+2+4=7 (dans B ✅)</li>
+      <li>1+3+4=8 (non dans B)</li>
+      <li>2+3+4=9 (non dans B)</li>
+    </ul>
+
+    <h4>🔢 Autres informations importantes :</h4>
+    <ul>
+      <li><strong>totalTested :</strong> nombre total de combinaisons testées.</li>
+      <li><strong>validCombinations :</strong> liste des combinaisons valides.</li>
+      <li><strong>result :</strong> nombre total de combinaisons valides.</li>
+    </ul>
+
+    <h4>📈 Complexité mathématique :</h4>
+    <ul>
+      <li>Combinaisons de 2 éléments : n(n-1)/2</li>
+      <li>Combinaisons de 3 éléments : n(n-1)(n-2)/6</li>
+    </ul>
+
+    <h4>📝 Résumé simple :</h4>
+    <p>Tu saisis des nombres dans A et B.<br>
+    Le programme vérifie toutes les sous-listes de 2 ou 3 nombres de A.<br>
+    Pour chaque sous-liste, il calcule la somme.<br>
+    Si la somme est dans B, c’est une combinaison gagnante.<br>
+    Il affiche le nombre total de combinaisons valides et les détaille.</p>
+
+    <div class="text-center mt-4">
+      <button mat-stroked-button color="primary" routerLink="/">
+        <mat-icon>arrow_back</mat-icon> Retour au calculateur
+      </button>
+    </div>
+  </mat-card>
+</div>

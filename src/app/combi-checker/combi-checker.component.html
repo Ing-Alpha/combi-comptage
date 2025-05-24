@@ -1,3 +1,12 @@
+    <div class="container my-4">
+    <!-- Ton contenu CombiChecker -->
+
+    <button mat-raised-button color="accent" class="mt-3"
+        routerLink="/resume">
+        <mat-icon>summarize</mat-icon> Voir le Résumé
+    </button>
+    </div>
+    
     <mat-card class="mat-elevation-z4" style="max-width: 800px; margin: auto; padding: 24px;">
       <h2>Vérificateur de Combinaisons</h2>
 
@@ -43,6 +52,7 @@
 
       <div style="margin-top: 24px;">
         <button mat-flat-button (click)="calculer()">Calculer</button>
+        <button class="mx-3" mat-stroked-button (click)="annuler()" >annuler</button>
       </div>
 
       <!-- Résultats -->

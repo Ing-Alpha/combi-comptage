@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],  
   templateUrl: './combi-checker.component.html',
   styleUrl: './combi-checker.component.scss'
@@ -81,5 +83,18 @@ export class CombiCheckerComponent {
 
   get displayCombinations(): string[] {
     return this.validCombinations.map(combo => combo.join(' + ') + ' = ' + combo.reduce((a, b) => a + b, 0));
+  }
+
+  annuler() {
+
+    this.A = [];
+    this.B = [];
+    this.newAValue = null;
+    this.newBValue = null;
+
+    this.result = null;
+    this.totalTested = 0;
+    this.validCombinations = [];
+
   }
 }

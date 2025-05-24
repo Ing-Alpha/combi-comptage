@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { CombiCheckerComponent } from './combi-checker/combi-checker.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: CombiCheckerComponent
-    }
+  {
+    path: '',
+    loadComponent: () => import('./combi-checker/combi-checker.component').then(m => m.CombiCheckerComponent)
+  },
+  {
+    path: 'resume',
+    loadComponent: () => import('./modern-summary/modern-summary.component').then(m => m.ModernSummaryComponent)
+  }
 ];
