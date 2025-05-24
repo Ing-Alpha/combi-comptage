@@ -5,6 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 @Component({
@@ -15,7 +17,8 @@ import { MatListModule } from '@angular/material/list';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatIconModule
   ],  
   templateUrl: './combi-checker.component.html',
   styleUrl: './combi-checker.component.scss'

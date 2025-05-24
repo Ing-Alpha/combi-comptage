@@ -7,14 +7,18 @@
           <mat-label>Ajouter un élément à A</mat-label>
           <input matInput type="number" [(ngModel)]="newAValue" />
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="ajouterA()">Ajouter à A</button>
+        <div class="example-button-container p-2">
+            <button mat-mini-fab aria-label="Example icon button with a menu icon" (click)="ajouterA()">
+            <mat-icon>add</mat-icon>
+            </button>
+        </div>
       </div>
 
       <!-- Liste A -->
-      <mat-card>
+      <mat-card class="p-3">
         <h3>Ensemble A :</h3>
         <p *ngIf="A.length === 0"><em>Aucun élément</em></p>
-        <p *ngIf="A.length > 0">{{ A.join(', ') }}</p>
+        <p *ngIf="A.length > 0">{{ A.join('  -  ') }}</p>
       </mat-card>
 
       <!-- Ajout Ensemble B -->
@@ -23,23 +27,27 @@
           <mat-label>Ajouter un élément à B</mat-label>
           <input matInput type="number" [(ngModel)]="newBValue" />
         </mat-form-field>
-        <button mat-raised-button color="accent" (click)="ajouterB()">Ajouter à B</button>
+        <div class="example-button-container p-2">
+            <button mat-mini-fab aria-label="Example icon button with a menu icon" (click)="ajouterB()">
+            <mat-icon>add</mat-icon>
+            </button>
+        </div>
       </div>
 
       <!-- Liste B -->
-      <mat-card>
+      <mat-card class="p-3">
         <h3>Ensemble B :</h3>
         <p *ngIf="B.length === 0"><em>Aucun élément</em></p>
-        <p *ngIf="B.length > 0">{{ B.join(', ') }}</p>
+        <p *ngIf="B.length > 0">{{ B.join('  -  ') }}</p>
       </mat-card>
 
       <div style="margin-top: 24px;">
-        <button mat-raised-button color="warn" (click)="calculer()">Calculer</button>
+        <button mat-flat-button (click)="calculer()">Calculer</button>
       </div>
 
       <!-- Résultats -->
       <div *ngIf="result !== null" style="margin-top: 24px;">
-        <mat-card>
+        <mat-card class="p-3">
           <h3>Résumé du calcul :</h3>
           <p><strong>Éléments A :</strong> {{ A.length }}</p>
           <p><strong>Éléments B :</strong> {{ B.length }}</p>
@@ -47,7 +55,7 @@
           <p><strong>Combinaisons valides :</strong> {{ result }}</p>
         </mat-card>
 
-        <mat-card style="margin-top: 16px;" *ngIf="validCombinations.length > 0">
+        <mat-card class="p-3" style="margin-top: 16px;" *ngIf="validCombinations.length > 0">
           <h3>Combinaisons valides :</h3>
           <mat-list>
             <!-- <mat-list-item *ngFor="let combo of validCombinations">
